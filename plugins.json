@@ -1,0 +1,23 @@
+[
+    {
+        "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Korduene_Logo.png",
+        "fileHash": "sha256-31739e4e3ab41682dbc8e530d28560eda26466a980ccacbaabac99eae4c81b12",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/kefh99/TestPlugins",
+        "fileSize": 7557,
+        "status": 1,
+        "language": "en",
+        "authors": [
+            "Cloudburst",
+            "Luna712"
+        ],
+        "tvTypes": [
+            "Movie"
+        ],
+        "version": 1,
+        "internalName": "ExampleProvider",
+        "description": "Lorem ipsum",
+        "url": "https://raw.githubusercontent.com/kefh99/TestPlugins/builds/ExampleProvider.cs3",
+        "name": "ExampleProvider"
+    }
+]
