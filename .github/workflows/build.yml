@@ -36,7 +36,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           java-version: 17
-          Distribution: 'zulu'
+          distribution: 'zulu'
 
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
