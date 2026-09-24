@@ -30,15 +30,18 @@ jobs:
           path: "builds"
       
       - name: Clean old builds
-        run: rm $GITHUB_WORKSPACE/builds/*.cs3
+        run: rm -f $GITHUB_WORKSPACE/builds/*.cs3
 
       - name: Setup JDK 17
-        uses: actions/setup-java@v1
+        uses: actions/setup-java@v4
         with:
           java-version: 17
+          Distribution: 'zulu'
 
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
+        with:
+           cmdline-tools-version: 8512546
 
       - name: Build Plugins
         run: |
