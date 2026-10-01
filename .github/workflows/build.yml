@@ -46,18 +46,22 @@ jobs:
             gradle wrapper
           fi
           chmod +x gradlew
-          ./gradlew make makePluginsJson
-          mkdir -p $GITHUB_WORKSPACE/builds
-          cp **/build/*.cs3 $GITHUB_WORKSPACE/builds/ 
-          || true
-          cp build/plugins.json $GITHUB_WORKSPACE/builds/ 
-          || true
+          ./gradlew make
+          makePluginsJson
+          mkdir -p $GITHUB_WORKSPACE/
+          builds
+          cp **/build/*.cs3
+          $GITHUB_WORKSPACE/builds/ || true
+          cp build/plugins.json
+          $GITHUB_WORKSPACE/builds/ || true
           
       - name: Push builds
         run: |
           cd $GITHUB_WORKSPACE
-          git config --local user.email "actions@github.com"
-          git config --local user.name "GitHub Actions"
+          git config --local user.email
+          "actions@github.com"
+          git config --local user.name
+          "GitHub Actions"
           git add .
           git commit -m "Build
           $GITHUB_SHA" || exit 0
