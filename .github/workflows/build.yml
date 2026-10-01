@@ -21,8 +21,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          path: "src"
-
+        
       - name: Checkout builds
         uses: actions/checkout@v4
         with:
