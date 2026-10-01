@@ -24,7 +24,7 @@ jobs:
           path: "src"
 
       - name: Checkout builds
-        uses: actions/checkout@master
+        uses: actions/checkout@v4
         with:
           ref: "builds"
           path: "builds"
@@ -43,18 +43,22 @@ jobs:
 
       - name: Build Plugins
         run: |
-          gradle wrapper
+          if [ ! -f ./gradlew ]; then
+            gradle wrapper
+          fi
           chmod +x gradlew
-          ./gradlew make makePluginsJson || true
+          ./gradlew make makePluginsJson
           mkdir -p $GITHUB_WORKSPACE/builds
           cp **/build/*.cs3 $GITHUB_WORKSPACE/builds/ || true
           cp build/plugins.json $GITHUB_WORKSPACE/builds/ || true
-
+          
       - name: Push builds
         run: |
           cd $GITHUB_WORKSPACE
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
           git add .
-          git commit -m "Build $GITHUB_SHA" || exit 0
+          git commit -m "Build
+          $GITHUB_SHA" || exit 0
           git push
+          
