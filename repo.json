@@ -1,0 +1,8 @@
+{
+  "name": "TestPlugins",
+  "description": "Mis plugins de prueba",
+  "manifestVersion": 1,
+  "pluginLists": [
+    "https://raw.githubusercontent.com/kefh99/TestPlugins/builds/plugins.json"
+  ]
+}
